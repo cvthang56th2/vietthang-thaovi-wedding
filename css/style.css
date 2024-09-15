@@ -1,0 +1,44 @@
+.second-section {
+  background-image: url('../images/activities/da-lat-2024.jpg');
+}
+.scan-section {
+  margin-bottom: 80px; margin-top: 20px;
+}
+.scan-section .container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+}
+.scan-section .container-fluid .map {
+  margin-top: 20px;
+  width: 50%;
+  padding: 0 20px;
+}
+.scan-section .container-fluid .gift {
+  margin-top: 20px;
+  width: 50%;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (max-width: 992px) {
+  .second-section a {
+    color: #fff !important;
+  }
+}
+@media (max-width: 768px) {
+  .second-section {
+    background-image: url('../images/activities/da-lat-2024-mobile.jpg');
+  }
+  
+  .banner-image {
+    background-image: url('../images/anh_cong/ACTC1925_1.jpg') !important;
+  }
+
+  .scan-section .container-fluid .map {
+    width: 100%;
+  }
+  .scan-section .container-fluid .gift {
+    width:1000%;
+  }
+}
