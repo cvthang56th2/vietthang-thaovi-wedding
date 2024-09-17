@@ -49,12 +49,13 @@
   padding: 16px;
 }
 
-.bless-item:nth-child(odd) {
+.bless-item:nth-child(even) {
   background-color: #f5f5f5;
 }
 
 .bless-item .name {
-  font-weight: 700;
+  font-family: Bree Serif;
+  font-weight: 600;
   margin-bottom: 4px;
 }
 

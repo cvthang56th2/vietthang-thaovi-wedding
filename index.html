@@ -13,6 +13,8 @@
     <link media="all" href="css/autoptimize_5eaa825ed5418fe7c35cba15f004d85e.css" rel="stylesheet"/>
     <link media="only screen and (max-width: 768px)" href="css/autoptimize_57afcea827824d1db313888418fe13fa.css"
           rel="stylesheet"/>
+    <!-- Firebase App (the core Firebase SDK) -->
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
     <link media="screen" href="css/autoptimize_abea50eb5cad43656f88878872d6f753.css" rel="stylesheet"/>
     <title>Viết Thắng - Thảo Vi</title>
     <link rel='dns-prefetch' href='//ajax.aspnetcdn.com'/>
@@ -64,11 +66,10 @@
         });
 
     </script>
-    <script src="js/script.js" type="text/javascript"></script>
 </head>
 
 <body class="page page-id-1556 page-template page-template-template-one-page page-template-template-one-page-php"><a
-        href="#" class="wed_top ti ti-angle-up wed_go"></a>
+        href="/" class="wed_top ti ti-angle-up wed_go"></a>
 <div class="wed_firefly">
     <div class="jqueryFireFly" data-total="15" data-minPixel="20" data-maxPixel="55"></div>
 </div>
@@ -88,7 +89,7 @@
                                                  src="images/black_white_couple_invert-50x45.png" alt=""/> <img
                         class="wed_couple_header wed_white_couple animated extra"
                         src="images/black_white_couple-50x45.png" alt=""/>
-                    <div class="wed_text_container"><a href="#" class="wed_logo wed_logo_animation">Thắng & Vi</a>
+                    <div class="wed_text_container"><a href="/" class="wed_logo wed_logo_animation">Thắng & Vi</a>
                         <div class="wed_logo_und">13.10.2024</div>
                     </div>
                 </div>
@@ -105,10 +106,6 @@
                                     class="menu-item menu-item-type-custom menu-item-object-custom"><a
                                         target="_blank"
                                         href="#blessing">Gửi lời chúc</a></li>
-                                <li
-                                    class="menu-item menu-item-type-custom menu-item-object-custom"><a
-                                        target="_blank"
-                                        href="#scan">Mừng cưới</a></li>
                             </ul>
                         </div>
                     </div>
@@ -876,7 +873,7 @@
                     <div class="row">
                         <div class="col-md-5 col-sm-12" style="margin-top: 50px;">
                             <div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; padding: 40px; border-radius: 6px;min-height: 308px;">
-                                <form>
+                                <form id="bless-form">
                                     <div class="row">
                                         <div class="col-md-6 col-sm-12">
                                             <div class="form-group">
@@ -900,26 +897,9 @@
                         </div>
                         <div class="col-md-7 col-sm-12" style="margin-top: 50px;">
                             <div style="box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px; border-radius: 6px;min-height: 308px; max-height: 308px; overflow-y: auto;">
-                                <div class="bless-list">
+                                <div class="bless-list" id="bless-list">
                                     <div class="bless-item">
-                                        <div class="name">Name</div>
-                                        <div>Description...</div>
-                                    </div>
-                                    <div class="bless-item">
-                                        <div class="name">Name</div>
-                                        <div>Description...</div>
-                                    </div>
-                                    <div class="bless-item">
-                                        <div class="name">Name</div>
-                                        <div>Description...</div>
-                                    </div>
-                                    <div class="bless-item">
-                                        <div class="name">Name</div>
-                                        <div>Description...</div>
-                                    </div>
-                                    <div class="bless-item">
-                                        <div class="name">Name</div>
-                                        <div>Description...</div>
+                                        Gửi lời chúc đầu tiên 🥰
                                     </div>
                                 </div>
                             </div>
@@ -1015,6 +995,7 @@
     /*  */
 </script>
 <script defer src="js/autoptimize_4c7a21032ed0f0652f5854a665252e17.js"></script>
+<script defer src="js/script.js" type="text/javascript"></script>
 </body>
 
 </html>
