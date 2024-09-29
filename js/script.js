@@ -103,13 +103,27 @@ async function watchAndRenderBlessItems() {
 
 // Call watchAndRenderBlessItems to display the bless list in real-time on page load
 document.addEventListener('DOMContentLoaded', watchAndRenderBlessItems);
+document.getElementById('register-car').addEventListener('change', function() {
+  if (this.checked) {
+    document.getElementById('input-phone').style.display = 'block';
+    document.getElementById('phone').setAttribute('required', 'required');
+  } else {
+    document.getElementById('input-phone').style.display = 'none';
+    document.getElementById('phone').removeAttribute('required');
+  }
+});
 // Handle form submission
 document.getElementById('bless-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   e.stopPropagation();
   const name = document.getElementById('name').value;
-  const email = document.getElementById('email').value;
   const description = document.getElementById('description').value;
+  const isRegisterCar = document.getElementById('register-car').checked;
+  const phone = document.getElementById('phone').value;
+  if (isRegisterCar && !phone) {
+    alert('Vui lòng nhập số điện thoại');
+    return;
+  }
   if (!name || !description) {
     alert('Vui lòng nhập tất cả các field');
     return;
@@ -121,12 +135,21 @@ document.getElementById('bless-form').addEventListener('submit', async (e) => {
   await createBlessItem({
     name,
     description,
-    email,
+    phone,
+    isRegisterCar,
     createdAt: new Date().toISOString()
   });
 
-  // Clear form fields
-  document.getElementById('name').value = '';
-  document.getElementById('email').value = '';
-  document.getElementById('description').value = '';
+  // hide form after submit and show success message
+  document.getElementById('bless-form').style.display = 'none';
+  document.getElementById('bless-form').reset();
+  document.getElementById('success-message').style.display = 'block';
+  // set session storage to prevent multiple submissions
+  sessionStorage.setItem('blessed', 'true');
 });
+
+// Check if user has already submitted a bless
+if (sessionStorage.getItem('blessed')) {
+  document.getElementById('bless-form').style.display = 'none';
+  document.getElementById('success-message').style.display = 'block';
+}
