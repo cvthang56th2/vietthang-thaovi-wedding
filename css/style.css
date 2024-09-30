@@ -80,3 +80,7 @@
     width:1000%;
   }
 }
+
+.wed_wht_txt .wed_countdown .countdown-amount {
+  color: #fff !important;
+}
