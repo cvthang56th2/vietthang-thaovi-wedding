@@ -100,14 +100,16 @@ async function watchAndRenderBlessItems() {
           <span>${blessItem.description}</span>
           <span class="read-less">Thu gọn</span>
         `;
-        blessDescEl.querySelector('.read-less').addEventListener('click', readLess);
+        blessDescEl.removeEventListener('click', readMore);
+        blessDescEl.addEventListener('click', readLess);
       }
       function readLess() {
         blessDescEl.innerHTML = `
           <span>${blessItem.description.slice(0, MAX_LENGTH)}...</span>
           <span class="read-more">Xem thêm</span>
         `;
-        blessDescEl.querySelector('.read-more').addEventListener('click', readMore);
+        blessDescEl.removeEventListener('click', readLess);
+        blessDescEl.addEventListener('click', readMore);
       }
       if (blessItem.description.length > MAX_LENGTH) {
         readLess();
