@@ -119,7 +119,10 @@ async function watchAndRenderBlessItems() {
         `;
       }
       blessItemDiv.innerHTML = `
-        <div class="name">${blessItem.name}</div>
+        <div class="name">
+          <span>${blessItem.name}</span>
+          ${blessItem.isRegisterCar ? `<img src="/images/icon-car.svg" width="20" />` : ''}
+        </div>
       `;
       blessItemDiv.appendChild(blessDescEl);
       blessListContainer.appendChild(blessItemDiv);

@@ -55,6 +55,8 @@
 }
 
 .bless-item .name {
+  display: flex;
+  justify-content: space-between;
   font-family: Bree Serif;
   font-weight: 600;
   margin-bottom: 4px;
