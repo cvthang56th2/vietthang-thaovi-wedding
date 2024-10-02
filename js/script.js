@@ -87,15 +87,39 @@ async function watchAndRenderBlessItems() {
     querySnapshot = querySnapshot.docs.sort((a, b) => {
       return new Date(b.data().createdAt) - new Date(a.data().createdAt);
     });
+    const MAX_LENGTH = 200;
     querySnapshot.forEach((doc) => {
       const blessItem = doc.data();
       listBless.push(blessItem);
       const blessItemDiv = document.createElement('div');
       blessItemDiv.classList.add('bless-item');
+      const blessDescEl = document.createElement('div');
+      blessDescEl.classList.add('bless-description');
+      function readMore() {
+        blessDescEl.innerHTML = `
+          <span>${blessItem.description}</span>
+          <span class="read-less">Thu gọn</span>
+        `;
+        blessDescEl.querySelector('.read-less').addEventListener('click', readLess);
+      }
+      function readLess() {
+        blessDescEl.innerHTML = `
+          <span>${blessItem.description.slice(0, MAX_LENGTH)}...</span>
+          <span class="read-more">Xem thêm</span>
+        `;
+        blessDescEl.querySelector('.read-more').addEventListener('click', readMore);
+      }
+      if (blessItem.description.length > MAX_LENGTH) {
+        readLess();
+      } else {
+        blessDescEl.innerHTML = `
+          <span>${blessItem.description}</span>
+        `;
+      }
       blessItemDiv.innerHTML = `
         <div class="name">${blessItem.name}</div>
-        <div>${blessItem.description}</div>
       `;
+      blessItemDiv.appendChild(blessDescEl);
       blessListContainer.appendChild(blessItemDiv);
     });
   });

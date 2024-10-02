@@ -5,7 +5,8 @@
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 80px; margin-top: 20px;
+  margin-bottom: 80px;
+  margin-top: 20px;
 }
 .scan-section .container-fluid {
   display: flex;
@@ -83,4 +84,31 @@
 
 .wed_wht_txt .wed_countdown .countdown-amount {
   color: #fff !important;
+}
+
+.fixed-blessing-button {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  z-index: 99;
+  border: 2px solid #09abd8;
+  color: #09abd8;
+  padding: 2px 10px;
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.fixed-blessing-button:hover,
+.fixed-blessing-button:focus {
+  text-decoration: none;
+  background-color: #fff;
+  color: #000;
+  text-shadow: none;
+}
+
+.bless-description .read-more,
+.bless-description .read-less {
+  color: #1E9EE6;
+  font-weight: 600;
+  cursor: pointer;
 }
