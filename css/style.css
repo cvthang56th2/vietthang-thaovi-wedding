@@ -62,12 +62,23 @@
   margin-bottom: 4px;
 }
 
+.custom-grid {
+  column-count: 3;
+  gap: 0;
+}
+
+.custom-grid .grid-item {
+  padding: 0;
+}
 @media (max-width: 992px) {
   .second-section a {
     color: #fff !important;
   }
 }
 @media (max-width: 768px) {
+  .custom-grid {
+    column-count: 1;
+  }
   .second-section {
     background-image: url('../images/activities/da-lat-2024-mobile.jpg');
   }
@@ -81,6 +92,50 @@
   }
   .scan-section .container-fluid .gift {
     width:1000%;
+  }
+
+  .custom-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-item-1 {
+    order: 1;
+  }
+  .grid-item-2 {
+    order: 6;
+  }
+  .grid-item-3 {
+    order: 9;
+  }
+  .grid-item-4 {
+    order: 13;
+  }
+  .grid-item-5 {
+    order: 2;
+  }
+  .grid-item-6 {
+    order: 4;
+  }
+  .grid-item-7 {
+    order: 7;
+  }
+  .grid-item-8 {
+    order: 10;
+  }
+  .grid-item-9 {
+    order: 12;
+  }
+  .grid-item-10 {
+    order: 3;
+  }
+  .grid-item-11 {
+    order: 5;
+  }
+  .grid-item-12 {
+    order: 8;
+  }
+  .grid-item-13 {
+    order: 11;
   }
 }
 
