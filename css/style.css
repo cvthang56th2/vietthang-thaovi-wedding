@@ -57,7 +57,6 @@
 .bless-item .name {
   display: flex;
   justify-content: space-between;
-  font-family: Bree Serif;
   font-weight: 600;
   margin-bottom: 4px;
 }
@@ -167,4 +166,8 @@
   color: #1E9EE6;
   font-weight: 600;
   cursor: pointer;
+}
+
+h3 {
+  font-weight: 600 !important;
 }
