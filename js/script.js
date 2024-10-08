@@ -15,7 +15,12 @@ document.addEventListener("DOMContentLoaded", function() {
             observer.unobserve(bg);
           } else {
             const img = entry.target;
-            img.src = img.dataset.src;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.addEventListener("load", () => {
+                img.removeAttribute("data-src");
+              });
+            }
             observer.unobserve(img);
           }
         }

@@ -171,3 +171,7 @@
 h3 {
   font-weight: 600 !important;
 }
+
+img[data-src] {
+  opacity: 0.3;
+}
